@@ -1,32 +1,47 @@
 
 public class Student {
-    //(defining parameter objects using Java records to group related data
-    //Speacial type of a class that carries immutable data
-    public record PersonalInfo(String studentNumber, String fullName){}
-    public record AcademicInfo(String course, int yearOfStudy, double averageMark) {}
-    public record FinancialInfo(double totalFees, double feesOwed, boolean registered){}
-
-    private PersonalInfo personalInfo;
-    private AcademicInfo academicInfo;
-    private FinancialInfo financialInfo;
+    
+    private final String studentNumber;
+    private String fullName;
+    private String course;
+    private int yearOfStudy;
+    private double averageMark;
+    private double totalFees;
+    private double feesPaid;
+    private boolean registered;
   
 
-    public Student(PersonalInfo personal, AcademicInfo academic, FinancialInfo financial) {
-        this.personalInfo = personal;
-        this.academicInfo = academic;
-        this.financialInfo = financial;
+    public Student(
+    String studentNumber,
+    String fullName,
+    String course,
+    int yearOfStudy,
+    double averageMark,
+    double totalFees,
+    double feesPaid,
+    boolean registered
+    ) {
+        this.studentNumber = studentNumber;
+        this.fullName = fullName;
+        this.course = course;
+        this.yearOfStudy = yearOfStudy;
+        this.averageMark =averageMark;
+        this.totalFees = totalFees;
+        this.feesPaid = feesPaid;
+        this.registered = registered;
     }
 
     //access methods
-    public PersonalInfo getPersonalInfo() {
-        return this.personalInfo;
-    }
-    public AcademicInfo getAcademicInfo() {
-        return this.academicInfo;
-    }
-    public FinancialInfo getFinancialInfo() {
-        return this.financialInfo;
-    }
+    public String getStudentNumber() {return this.studentNumber;}
+    public String getFullName() {return this.fullName;}
+    public String getCourse() {return this.course;}
+    public int getYearOfStudy() {return this.yearOfStudy;}
+    public double getAverageMark() {return this.averageMark;}
+    public double getTotalFees() {return this.totalFees;}
+    public double getFeesPaid() {return this.feesPaid;}
+    public boolean getRegistered() {return this.registered;}
+
+    //Mutator methods
 
     
 }
