@@ -7,7 +7,6 @@ This project is being developed incrementally as part of my journey to strengthe
 ## Project Goals
 
 - Practise classes, objects, constructors, and encapsulation.
-- Use Java records to group related student information.
 - Manage student objects using an `ArrayList`.
 - Implement searching, updating, and deleting records.
 - Apply getters and setters to access and modify student information.
@@ -18,7 +17,6 @@ This project is being developed incrementally as part of my journey to strengthe
 ## Technologies
 
 - Java
-- Java Records
 - Object-Oriented Programming
 - Git and GitHub
 
@@ -26,8 +24,8 @@ This project is being developed incrementally as part of my journey to strengthe
 
 ### Completed
 - Created the `Student` class.
-- Defined records for personal, academic, and financial information.
 - Added a constructor and getter methods.
+- Added mutator methods
 
 ### Planned
 - Implement academic status and fee calculations.
