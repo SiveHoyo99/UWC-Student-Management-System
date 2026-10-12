@@ -42,6 +42,49 @@ public class Student {
     public boolean getRegistered() {return this.registered;}
 
     //Mutator methods
-
-    
+    public void setFullName(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            System.out.println("Error: Name cannot be empty");
+            return;
+        }
+        this.fullName = name;
+    }
+    public void setCourse(String course) {
+          if (course == null || course.trim().isEmpty()) {
+            System.out.println("Error: Course cannot be empty");
+            return;
+        }
+        this.course = course;
+    }
+    public void setYearOfStudy(int yearOfStudy) {
+        if (yearOfStudy < 4) {
+            System.out.println("Error: Year of study should be at least 4 digit");
+            return;
+        }
+        this.yearOfStudy = yearOfStudy;
+    }
+    public void setAverageMark(double averageMark) {
+        if (averageMark < 0) {
+            System.out.println("Error: Average mark cannot be negative.");
+            return;
+        }
+        this.averageMark = averageMark;
+    }
+    public void setTotalFees(double totalFees) {
+        if (totalFees < 0) {
+            System.out.println("Error: Total fees cannot be less than zero");
+            return;
+        }
+        this.totalFees = totalFees;
+    }
+    public void setFeesPaid(double feesPaid) {
+        if (feesPaid < 0) {
+            System.out.println("Error: Fees paid cannot be less than zero.");
+            return;
+        }
+        this.feesPaid = feesPaid;
+    }
+    public void setRegistered(boolean registered) {
+        this.registered =registered;
+    }
 }
