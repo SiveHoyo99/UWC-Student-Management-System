@@ -85,6 +85,29 @@ public class Student {
         this.feesPaid = feesPaid;
     }
     public void setRegistered(boolean registered) {
-        this.registered =registered;
+        this.registered = registered;
+    }
+
+    //Instance methods
+
+    public String calculateAcademicStatus(double averageMark) {
+        String status;
+        
+        if(averageMark >= 75) {
+            status = "Dean's Merit List";
+        }
+        else if (averageMark >= 70) {
+            status = "Excellent";
+        }
+        else if (averageMark >= 60) {
+            status = "Adequate";
+        }
+        else if (averageMark >= 50) {
+            status = "Pass";
+        }
+        else {
+            status = "At Risk";
+        }
+        return status;
     }
 }
