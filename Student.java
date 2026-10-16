@@ -7,7 +7,7 @@ public class Student {
     private int yearOfStudy;
     private double averageMark;
     private double totalFees;
-    private double feesPaid;
+    private double outstandingFees;
     private boolean registered;
   
 
@@ -18,7 +18,7 @@ public class Student {
     int yearOfStudy,
     double averageMark,
     double totalFees,
-    double feesPaid,
+    double outstandingFees
     boolean registered
     ) {
         this.studentNumber = studentNumber;
@@ -27,7 +27,7 @@ public class Student {
         this.yearOfStudy = yearOfStudy;
         this.averageMark =averageMark;
         this.totalFees = totalFees;
-        this.feesPaid = feesPaid;
+        this.outstandingFees = outstandingFees;
         this.registered = registered;
     }
 
@@ -38,7 +38,7 @@ public class Student {
     public int getYearOfStudy() {return this.yearOfStudy;}
     public double getAverageMark() {return this.averageMark;}
     public double getTotalFees() {return this.totalFees;}
-    public double getFeesPaid() {return this.feesPaid;}
+    public double getOutstandingFees() {return this.outstandingFees;}
     public boolean getRegistered() {return this.registered;}
 
     //Mutator methods
@@ -77,13 +77,15 @@ public class Student {
         }
         this.totalFees = totalFees;
     }
-    public void setFeesPaid(double feesPaid) {
+    //Fix this logic
+    public void setOutstandingFees(double outstandingFees) {
         if (feesPaid < 0) {
             System.out.println("Error: Fees paid cannot be less than zero.");
             return;
         }
-        this.feesPaid = feesPaid;
+        this.outstandingFees = outstandingFees;
     }
+
     public void setRegistered(boolean registered) {
         this.registered = registered;
     }
@@ -92,7 +94,7 @@ public class Student {
 
     public String calculateAcademicStatus(double averageMark) {
         String status;
-        
+
         if(averageMark >= 75) {
             status = "Dean's Merit List";
         }
@@ -110,4 +112,30 @@ public class Student {
         }
         return status;
     }
+   
+    public boolean recordPayment(double totalFees, double amount) {
+        if (amount < 0) {
+            System.out.println("Invalid payment! You cannot pay a negative amount.")
+            return false;
+        }
+        outstandingFees - amount;
+        return true;
+    }
+
+    public void displayStudentDetails() {
+        System.out.println("\n========================================");
+        System.out.println("               STUDENT PROFILE            ");
+        System.out.println("\n========================================");
+        System.out.println("Student Number      : " + this.studentNumber);
+        System.out.println("Full Name       : " + this.fullName);
+        System.out.println("Course      : " + this.course);
+        System.out.println("Year of Study       : " + this.yearOfStudy);
+        System.out.println("Average Mark        : " + this.averageMark);
+        System.out.println();
+        System.out.printf("Total Fees      : R%.2f", this.totalFees);
+        System.out.printf("Outstanding fees     : ", outstandingFees);
+        System.out.println("Registered      : " this.registered);
+    }
+
+
 }
